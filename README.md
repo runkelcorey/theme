@@ -53,7 +53,7 @@ ggplot(mtcars, aes(disp, mpg)) +
   labs(title = "MPG on engine displacement", subtitle = "Colors represent cylinders", caption = "Source: R") +
   theme_web_big()
 ```
-![Big web variant](examples/theme_web_big.png)
+![Big web variant](examples/theme_web_big.jpg)
 
 ### print
 This variant is appropriate for print publications, which often require PDFs.
