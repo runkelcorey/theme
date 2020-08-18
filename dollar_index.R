@@ -11,7 +11,7 @@ library(showtext)
 
 #fonts
 font_add("Yale", "fonts/YaleNew-Roman.otf", "fonts/YaleNew-Bold.otf", "fonts/YaleNew-Italic.otf", "fonts/YaleNew-BoldItalic.otf")
-font_add("Helvetica", "fonts/Helvetica-light.ttf", "fonts/Helvetica.ttf", "fonts/Helvetica-Oblique.ttf", "fonts/Helvetica-BoldOblique.ttf")
+font_add("Helvetica", "fonts/Helvetica-Light.ttf", "fonts/Helvetica.ttf", "fonts/Helvetica-Oblique.ttf", "fonts/Helvetica-BoldOblique.ttf")
 
 #NBER recessions
 recessions <- read_csv("start, end

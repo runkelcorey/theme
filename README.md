@@ -15,9 +15,8 @@ Additionally, you must install the fonts to the R session.
 If, like me, you rarely save workspace images, you will have to re-install each R session you launch.
 ```
 showtext_auto()
-#add Yale font
 font_add("Yale", "fonts/YaleNew-Roman.otf", "fonts/YaleNew-Bold.otf", "fonts/YaleNew-Italic.otf", "fonts/YaleNew-BoldItalic.otf")
-font_add("Helvetica", "fonts/Helvetica-light.ttf", "fonts/Helvetica.ttf", "fonts/Helvetica-Oblique.ttf", "fonts/Helvetica-BoldOblique.ttf")
+font_add("Helvetica", "fonts/Helvetica-Light.ttf", "fonts/Helvetica.ttf", "fonts/Helvetica-Oblique.ttf", "fonts/Helvetica-BoldOblique.ttf")
 ```
 The Helvetica included here is a [lookalike](https://www.dafontfree.io/helvetica-neue-font-free/) of the Neue Light face.
 YaleNew is [approved](https://yaleidentity.yale.edu/typefaces) for use only by students and staff, so it is not included it in `fonts/`.
