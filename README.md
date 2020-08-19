@@ -25,10 +25,9 @@ YaleNew is [approved](https://yaleidentity.yale.edu/typefaces) for use only by s
 Now, simply call the theme as you would any other!
 
 ## Variants
-Currently, this repository only supports the Yale SOM style. We would love to support more themes! If you are affiliated with another Yale school/discipline/publication that has (or would like to develop) its own style, please reach out.
-
-Unfortunately, producing igures for publication is not as seamless as `ggplot2`.
-Specifically, resizing figures to meet the quality expectations of publications will often shrink fonts to a point of unusability.
+Currently, this repository only supports the Yale SOM style.
+Despite the theme's enhancements, producing figures for publication is still not as seamless as with `ggplot2`.
+Specifically, resizing figures to meet the quality expectations of publications will often shrink fonts to a point of unreadability.
 To keep matters simple, we present three pre-sized variants: web (small); web (big); and print.
 Here's how the three compare when using one of R's built-in datasets.
 
