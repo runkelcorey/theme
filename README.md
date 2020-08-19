@@ -9,7 +9,7 @@ library(ggplot2)
 library(showtext)
 ```
 
-Before calling any of the themes in this repo, you must enable `showtext` to comandeer RStudio's graphics backend.
+Before calling any of the themes in this repo, you must enable `showtext` to commandeer RStudio's graphics backend.
 Otherwise, calling the library does nothing for the final product.
 Additionally, you must install the fonts to the R session.
 If, like me, you rarely save workspace images, you will have to re-install each R session you launch.
@@ -25,20 +25,40 @@ YaleNew is [approved](https://yaleidentity.yale.edu/typefaces) for use only by s
 Now, simply call the theme as you would any other!
 
 ## Variants
-Currently, this repository only supports the Yale SOM style.
-Despite the theme's enhancements, producing figures for publication is still not as seamless as with `ggplot2`.
-Specifically, resizing figures to meet the quality expectations of publications will often shrink fonts to a point of unreadability.
+Due to the problems with outputting high-resolution figures using R, figures produced using the web variants may look jumbled in RStudio's Viewer pane.
+This is because the Viewer pane defaults to a low resolution, while high-resolution figures require commensurately large font sizes
+(export a figure using the base `ggplot` theme at a high dpi to see this phenomenon in action).
+Correcting for this problem makes for a wonky image in the Viewer, but an evenly sized version once exported.
+![Totally normal viewer pane for high-res images](examples/outsized_fonts.png)
+
 To keep matters simple, we present three pre-sized variants: web (small); web (big); and print.
 Here's how the three compare when using one of R's built-in datasets.
 
+### print
+This variant is appropriate for print publications, which often require PDFs.
+It is also the "stock" SOM theme, with minimal tweaks to font sizing.
+Since it produces relatively proportional (if somewhat pixelated) images in the viewer, this is the best theme for testing and tinkering with visualizations.
+
+Using the export as PDF option in RStudio with the cairo device, this variant can produce a huge range of sizes without adjustment.
+```
+ggplot(mtcars, aes(disp, mpg)) +
+  geom_point(aes(col = factor(cyl))) +
+  geom_smooth() +
+  labs(title = "MPG on engine displacement", subtitle = "Colors represent cylinders", caption = "Source: R") +
+  theme_print()
+```
+The example image is located at [`theme_print.pdf`](examples/theme_print.pdf).
+The fact that it can't be shown here demonstrates the main drawback of the print variant---it is rarely supported by publishing tools and protocols.
+
 ### web (small)
-This variant is appropriate for web figures between 8 and 15cm wide and 5 to 10cm tall. Both this and the web publication variant assume a retina display of 350dpi and---when using lossy file formats---often produce file sizes below 500kb.
+This variant is appropriate for web figures between 8 and 15cm wide and 5 to 10cm tall. Both this and the web publication variant assume a retina display 350-600dpi and---when using lossy file formats---often produce file sizes below 500kb.
 ```
 ggplot(mtcars, aes(disp, mpg)) +
   geom_point(aes(col = factor(cyl))) +
   geom_smooth() +
   labs(title = "MPG on engine displacement", subtitle = "Colors represent cylinders", caption = "Source: R") +
   theme_web_small()
+ggsave("examples/theme_web_small.jpg", width = 10, height = 6, units = "cm", dpi = 350)
 ```
 ![Small web variant example](examples/theme_web_small.jpg)
 
@@ -50,21 +70,9 @@ ggplot(mtcars, aes(disp, mpg)) +
   geom_smooth() +
   labs(title = "MPG on engine displacement", subtitle = "Colors represent cylinders", caption = "Source: R") +
   theme_web_big()
+ggsave("examples/theme_web_big.jpg", width = 30, height = 18, units = "cm", dpi = 350)
 ```
 ![Big web variant](examples/theme_web_big.jpg)
-
-### print
-This variant is appropriate for print publications, which often require PDFs.
-It is also the "stock" SOM theme, with minimal tweaks to font sizing.
-Using the export as PDF option in RStudio with the cairo device, this variant can produce a huge range of sizes without adjustment.
-```
-ggplot(mtcars, aes(disp, mpg)) +
-  geom_point(aes(col = factor(cyl))) +
-  geom_smooth() +
-  labs(title = "MPG on engine displacement", subtitle = "Colors represent cylinders", caption = "Source: R") +
-  theme_print()
-```
-The example image is located at [`theme_print.pdf`](examples/theme_print.pdf).
 
 ## Featured work
 These blog posts show the themes in action.
