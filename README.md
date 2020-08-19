@@ -20,7 +20,7 @@ font_add("Helvetica", "fonts/Helvetica-Light.ttf", "fonts/Helvetica.ttf", "fonts
 ```
 The Helvetica included here is a [lookalike](https://www.dafontfree.io/helvetica-neue-font-free/) of the Neue Light face.
 YaleNew is [approved](https://yaleidentity.yale.edu/typefaces) for use only by students and staff, so it is not included it in `fonts/`.
-`showtext` inadvertantly aids Yale's licensing agreement by converting typefaces to polygons (normally, PDFs embed typefaces in the documents).
+`showtext` inadvertently aids Yale's licensing agreement by converting typefaces to polygons (normally, PDFs embed typefaces in the documents).
 
 Now, simply call the theme as you would any other!
 
